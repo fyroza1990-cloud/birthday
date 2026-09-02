@@ -1,0 +1,66 @@
+<!-- 🎁 بخش سورپرایز -->
+<div id="surpriseVideo" class="video-screen">
+
+    <div class="balloons">
+        🎈 🎈 🎈 🎈 🎈 🎈 🎈
+    </div>
+
+    <h1>🎉 SURPRISE! 🎉</h1>
+
+    <p>فکر کردی سورپرایز همین بود؟ 👀</p>
+
+    <video id="birthdayVideo" controls>
+        <source src="birthday.mp4" type="video/mp4">
+        مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+    </video>
+
+</div>
+
+<style>
+.video-screen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #16002b, #4b164c);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.video-screen h1 {
+    font-size: 42px;
+    margin-top: 50px;
+}
+
+.video-screen p {
+    font-size: 22px;
+}
+
+#birthdayVideo {
+    width: 90%;
+    max-width: 800px;
+    margin-top: 25px;
+    border-radius: 20px;
+}
+
+.balloons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 45px;
+    animation: float 5s infinite linear;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(100vh);
+    }
+
+    to {
+        transform: translateY(-120vh);
+    }
+}
+</style>
