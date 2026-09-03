@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>رسیدن به تولد یک فرشته</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: #ffd6e7;
+}
+
+#number {
+    font-size: 100px;
+    font-weight: bold;
+    color: #ff4f91;
+}
+
+#message {
+    display: none;
+    font-size: 35px;
+    font-weight: bold;
+    color: #ff4f91;
+}
+</style>
+</head>
+
+<body>
+
+<div>
+    <div id="number">15</div>
+
+    <div id="message">
+        🎉 هوراااااااااااااا! 🎉<br>
+        تولدت مبارکککککککک! 🎂🪽
+    </div>
+</div>
+
+<script>
+
+function iranTime() {
+    return new Date(
+        new Date().toLocaleString("en-US", {
+            timeZone: "Asia/Tehran"
+        })
+    );
+}
+
+function countdown() {
+
+    let now = iranTime();
+
+    let midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0);
+
+    let seconds = Math.floor((midnight - now) / 1000);
+
+    if (seconds <= 15 && seconds > 0) {
+        document.getElementById("number").innerText = seconds;
+    }
+
+    if (seconds <= 0) {
+        document.getElementById("number").style.display = "none";
+        document.getElementById("message").style.display = "block";
+    }
+}
+
+countdown();
+setInterval(countdown, 1000);
+
+</script>
+
+</body>
+</html>
